@@ -31,7 +31,8 @@ export const StateContextProvider: React.FC<PropsWithChildren<unknown>> = ({
     if (state.today) {
       dispatch({ type: ActionType.SELECT_DATE, data: state.today });
     }
-  }, [dispatch, state.today]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
   return (
     <StateContext.Provider value={{ state, dispatch }}>
       {children}

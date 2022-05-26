@@ -11,7 +11,7 @@ export const Calendar: React.FC = () => {
 
   if (!currentMonthData || !followingMonthData) return null;
   return (
-    <div className="rounded-2xl bg-cyan-50 shadow mt-5 p-6 pb-2 relative ">
+    <div className="rounded-2xl bg-cyan-50 shadow mt-5 p-6 pb-3 relative select-none">
       <div
         className="absolute left-2 w-6 h-6 rounded-full cursor-pointer hover:bg-slate-200 active:bg-slate-300 grid place-items-center transition-colors ease-in duration-75"
         onClick={() => dispatch({ type: ActionType.GET_PREVIOUS_MONTHS })}
@@ -28,14 +28,6 @@ export const Calendar: React.FC = () => {
         <CalendarPage data={currentMonthData} />
         <CalendarPage data={followingMonthData} />
       </div>
-      <footer>
-        <button
-          type="button"
-          className="rounded-full w-14 text-sm border-solid border-2 border-zinc-500 transition-all ease duration-50 h-6 text-zinc-700  hover:text-white hover:bg-zinc-500 hover:shadow-xl"
-        >
-          Today
-        </button>
-      </footer>
     </div>
   );
 };

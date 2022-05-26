@@ -69,7 +69,7 @@ const getFirstDaysInMonth = (
   return firstDays;
 };
 
-const getDaysInMonthCount = (year: number, month: number) => {
+export const getDaysInMonthCount = (year: number, month: number) => {
   let count = 0;
   while (new Date(year, month, count + 1).getMonth() === month) {
     count += 1;

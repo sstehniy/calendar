@@ -4,5 +4,6 @@
 
 #root {
     height: 100vh;
-    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    box-sizing: border-box;
+    background-color: #fff;
 }

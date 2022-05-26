@@ -1,0 +1,81 @@
+.fade-right::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 22px;
+    top: 3px;
+    bottom: 3px;
+    z-index: 10;
+    background: linear-gradient(to left, rgba(236, 254, 255, 1), rgba(236, 254, 255, 0));
+}
+
+.fade-left::before {
+    content: "";
+    position: absolute;
+    right: 50%;
+    width: 22px;
+    top: 3px;
+    bottom: 3px;
+    z-index: 10;
+    background: linear-gradient(to right, rgba(236, 254, 255, 1), rgba(236, 254, 255, 0));
+}
+
+
+
+.from-date::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 50%;
+    width: 20px;
+    z-index: 0;
+    background-color: rgba(162, 162, 246, 0.2);
+}
+
+.to-date::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    right: 50%;
+    width: 20px;
+    z-index: 0;
+    background-color: rgba(162, 162, 246, 0.2);
+}
+
+.range-date::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 0;
+    right: 0;
+    margin: 0 -4px;
+    z-index: 0;
+    background-color: rgba(162, 162, 246, 0.2);
+}
+
+/* .grid-wrapper::before {
+    content: "";
+    position: absolute;
+    right: 98%;
+    width: 10px;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background: -webkit-linear-gradient(left, rgba(236, 254, 255, .9), rgba(236, 254, 255, .1));
+}
+
+.grid-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 98%;
+    width: 10px;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background: -webkit-linear-gradient(right, rgba(236, 254, 255, .9), rgba(236, 254, 255, .1));
+}
+
+.date-wrapper::before {} */
