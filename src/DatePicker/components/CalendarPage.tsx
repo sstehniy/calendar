@@ -115,7 +115,7 @@ export const CalendarPage: React.FC<CalendarPageTypeProps> = ({ data }) => {
 
   if (!today) return null;
   return (
-    <div className="w-1/2 flex-1 shrink-0 text-center">
+    <div className="w-1/2 flex-1 shrink-0 text-center overflow-hidden">
       <h4 className="font-semibold">
         {getMonthName(data.month)} {data.year}
       </h4>
@@ -130,17 +130,19 @@ export const CalendarPage: React.FC<CalendarPageTypeProps> = ({ data }) => {
         <div className="grid grid-cols-7 gap-2 mt-3">
           {data.days.map((day) => {
             const status = getDateStatus(day);
-            console.log(day, status);
-            console.table({
-              inner: getInnerStyle(status),
-              outter: getOutterStyle(status)
-            });
+            const date = new Date();
+            const showToday =
+              !selectedDateRange.fromDate &&
+              !selectedDateRange.toDate &&
+              date.getDate() === day.day &&
+              date.getFullYear() === day.year &&
+              date.getMonth() === day.month;
             return day.month === data.month ? (
               <div
                 key={`${day.day}.${day.month}.${day.year}`}
-                className={`relative tabular-nums text-sm font-semibold aspect-square rounded-full w-8 h-8 ${getOutterStyle(
-                  status
-                )}`}
+                className={`relative tabular-nums text-sm font-semibold aspect-square rounded-full w-8 h-8 ${
+                  showToday ? "border-2 border-slate-600" : ""
+                } ${getOutterStyle(status)}`}
                 onClick={() =>
                   dispatch({ type: ActionType.SELECT_DATE, data: day })
                 }
